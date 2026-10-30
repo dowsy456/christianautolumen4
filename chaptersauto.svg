@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" style="display:block;width:100vw;height:100vh;background:#fff" role="document" aria-labelledby="svgTitle">
+  <title id="svgTitle">Get More Math</title>
+  <metadata>Created 2026-10-30T02:45:02.372Z. Standalone responsive launcher.</metadata>
+  <foreignObject x="0" y="0" width="100%" height="100%">
+    <div xmlns="http://www.w3.org/1999/xhtml" class="page">
+      <style><![CDATA[
+        * { box-sizing: border-box; }
+        .page { --green:#499541; --ink:#303630; --muted:#7c817b; width:100%; height:100%; overflow:auto; margin:0; font-family:Arial,Helvetica,sans-serif; font-size:14px; color:var(--ink); background:#fff; }
+        button,input { font:inherit; }
+        button { cursor:pointer; }
+        button:focus-visible,a:focus-visible { outline:3px solid #61bad0; outline-offset:4px; }
+        button:disabled { cursor:wait; opacity:.7; }
+        [hidden] { display:none !important; }
+        .frame { width:100%; max-width:1400px; margin:0 auto; }
+        .stats { display:flex; align-items:center; gap:8px; min-height:28px; padding:4px 23px; color:#787d77; font-size:12px; }
+        .points { display:inline-block; background:var(--green); padding:0 3px; border-radius:2px; color:white; font-size:16px; line-height:19px; }
+        .credit { width:208px; border:2px solid #9ca09b; border-radius:12px; margin-left:auto; overflow:hidden; height:17px; padding:1px; text-align:center; line-height:11px; font-size:11px; }
+        .credit span { display:block; width:80%; color:white; border-radius:9px 0 0 9px; background:#858984; }
+        .topbar { background:var(--green); color:white; box-shadow:0 2px 3px #0002; }
+        .nav { height:57px; display:grid; grid-template-columns:1fr 1fr 1fr; align-items:center; padding:0 23px; }
+        .logo { font-family:Georgia,'Times New Roman',serif; font-weight:900; letter-spacing:-3px; font-size:49px; line-height:1; transform:translateY(-3px); }
+        .lesson { display:flex; align-items:center; justify-content:center; gap:24px; font-size:18px; font-weight:700; white-space:nowrap; }
+        .chevron { display:inline-block; width:0; height:0; border-left:4px solid transparent; border-right:4px solid transparent; border-top:5px solid white; vertical-align:middle; margin-left:6px; }
+        .nav-end { justify-self:end; display:flex; gap:17px; align-items:center; }
+        .user { color:#f5fff2; font-size:14px; }
+        .hand { width:24px; height:29px; }
+        .menu-icon { display:grid; gap:6px; width:29px; }
+        .menu-icon i { display:block; height:3px; background:#fff; }
+        main { display:grid; grid-template-columns:minmax(290px, .87fr) minmax(0, 1.75fr); gap:20px; padding:0 23px 26px; }
+        .section-heading { height:47px; display:flex; align-items:center; gap:7px; font-size:14px; color:#7d827b; font-weight:700; }
+        .section-heading .count { font-weight:400; }
+        .target { height:42px; display:flex; align-items:center; gap:7px; padding:8px 6px; border-bottom:2px solid #d0d2ce; background:#f6f7f5; box-shadow:1px 1px 2px #0001; }
+        .target-date { font-weight:700; color:#80867e; font-size:13px; margin-right:4px; }
+        .tile { width:24px; height:24px; display:inline-flex; justify-content:center; align-items:center; flex-shrink:0; font-family:Arial,Helvetica,sans-serif; font-size:22px; line-height:1; }
+        .tile.star { background:#91968e; color:#f7efa0; font-size:24px; }
+        .tile.green { background:#addb98; }
+        .tile.dark { background:#414640; color:#f6f6f3; font-weight:700; }
+        .tile.yellow { background:#f0e99a; }
+        .tile.lime { background:#9bd465; color:#20291c; font-weight:700; }
+        .tile.empty { border:2px solid #d3d7d0; background:white; }
+        .tile.current { background:white; outline:2px solid #55b5cd; outline-offset:2px; border:1px solid #e4e7e1; color:#222; font-weight:700; }
+        .review-heading { justify-content:space-between; height:45px; }
+        .review-heading>span:first-child { white-space:nowrap; }
+        .sort { font-size:10px; font-weight:400; margin-left:8px; white-space:nowrap; }
+        .sort b { font-weight:700; }
+        .sort i { display:inline-block; border-top:4px solid #777f73; border-left:3px solid transparent; border-right:3px solid transparent; margin-left:4px; vertical-align:middle; }
+        .review { min-height:399px; padding:8px 10px 16px 0; border-bottom:2px solid #d0d2ce; border-right:2px solid #d0d2ce; background:linear-gradient(90deg,#e9ebe7 0,#e9ebe7 69px,#f7f8f6 69px); box-shadow:1px 1px 2px #0001; }
+        .month { display:grid; grid-template-columns:69px 1fr; margin-bottom:15px; min-height:56px; }
+        .month:last-child { margin-bottom:0; }
+        .month-name { color:#7e837a; font-size:13px; padding:20px 0 0 13px; white-space:nowrap; }
+        .month-tiles { display:grid; align-content:start; gap:9px; padding-left:8px; }
+        .tile-row { display:flex; gap:9px; flex-wrap:wrap; }
+        .current-heading { position:relative; justify-content:center; gap:10px; }
+        .current-heading .tile { width:21px; height:21px; font-size:19px; border:1px solid #c9cdc5; background:white; }
+        .level { display:flex; align-items:center; position:absolute; left:10px; }
+        .level i { display:block; width:21px; height:11px; background:#98c1e7; border-radius:8px 0 0 8px; }
+        .level b { display:block; width:17px; height:20px; background:var(--green); box-shadow:1px 1px 2px #0002; }
+        .show-answer { border:0; border-radius:20px; background:var(--green); color:#fff; font-size:10px; font-weight:700; padding:6px 11px; position:absolute; right:0; box-shadow:1px 2px 3px #0003; }
+        .exercise { background:#f7f8f6; border-right:2px solid #d0d2ce; border-bottom:2px solid #d0d2ce; box-shadow:1px 1px 2px #0001; min-height:486px; padding:16px clamp(20px,5vw,72px) 12px; }
+        .question { max-width:540px; font-size:16px; line-height:1.4; margin:0 auto 11px; font-weight:400; color:#242924; }
+        .answers { width:100%; max-width:470px; margin:0 auto; border:0; padding:0; }
+        .answer { display:flex; align-items:center; gap:24px; position:relative; min-height:95px; padding:10px 4px; border-bottom:1px solid #d9ded5; cursor:pointer; }
+        .answer:last-child { border-bottom:0; }
+        .answer:hover { background:#eef3e9; }
+        .answer input { position:absolute; top:0; left:0; opacity:0; width:1px; height:1px; }
+        .checkmark { width:23px; height:23px; border:2px solid #d3d8cf; border-radius:6px; flex-shrink:0; background:#fafbf9; }
+        .answer input:checked + .checkmark { border-color:var(--green); background:var(--green); box-shadow:inset 0 0 0 4px #fff; }
+        .answer input:focus-visible + .checkmark { outline:3px solid #55b5cd; outline-offset:3px; }
+        .answer.correct { background:#e4f1dc; border-radius:6px; }
+        .number-line { display:block; width:100%; height:auto; min-width:0; }
+        .launch-area { grid-column:2; display:flex; flex-direction:column; align-items:center; padding:3px 0 0; }
+        .launch { color:#fff; background:var(--green); border:0; min-height:44px; min-width:220px; border-radius:24px; font-size:15px; font-weight:700; padding:12px 28px; box-shadow:0 2px 3px #0002; }
+        .launch:hover { background:#3f8537; }
+        .launch:active { transform:translateY(1px); }
+        #progressPanel { width:100%; max-width:470px; margin:16px auto 0; }
+        #statusText { font-size:13px; color:#687361; font-variant-numeric:tabular-nums; margin:0 0 8px; text-align:center; min-height:16px; }
+        #progressTrack { background:#e5ecdf; height:5px; border-radius:4px; overflow:hidden; }
+        #bar { background:var(--green); width:0; height:100%; border-radius:4px; }
+        .is-indeterminate #bar { animation:loading 1.1s ease-in-out infinite alternate; }
+        @keyframes loading { to { transform:translateX(177%); } }
+        @media(prefers-reduced-motion:reduce) { .is-indeterminate #bar { animation:none; } }
+        @media(min-width:1450px) { .stats { padding-top:7px; padding-bottom:7px; } main { padding-top:8px; } .exercise { min-height:520px; } .answer { min-height:103px; } .review { min-height:433px; } .month { margin-bottom:23px; } }
+        @media(max-width:1050px) { main { grid-template-columns:minmax(274px,.9fr) minmax(0,1.7fr); gap:16px; padding:0 16px 22px; } .tile { width:21px; height:21px; font-size:20px; } .tile.star { font-size:21px; } .tile-row { gap:7px; } .month-tiles { gap:8px; padding-left:7px; } .review { background:linear-gradient(90deg,#e9ebe7 0,#e9ebe7 62px,#f7f8f6 62px); } .month { grid-template-columns:62px 1fr; } .month-name { padding-left:9px; } .exercise { padding-left:22px; padding-right:22px; } .question { font-size:14px; } .answer { gap:17px; } .user { display:none; } }
+        @media(max-width:700px) { .stats { padding-left:16px; padding-right:16px; font-size:10px; gap:6px; } .credit { width:120px; font-size:10px; } .nav { padding:0 16px; height:54px; grid-template-columns:1fr auto 1fr; } .logo { font-size:41px; } .lesson { gap:12px; font-size:14px; } .hand { display:none; } .menu-icon { width:24px; gap:5px; } main { display:flex; flex-direction:column; gap:0; padding:0 14px 24px; } .sidebar { order:3; margin-top:15px; } .lesson-panel { order:1; } .launch-area { order:2; margin-top:19px; } .current-heading { height:45px; font-size:12px; } .show-answer { font-size:9px; padding:5px 8px; } .exercise { min-height:0; padding:16px 16px 6px; } .answer { min-height:81px; gap:15px; } .question { font-size:14px; } .review { min-height:0; } .month { margin-bottom:12px; } .tile-row { gap:9px; } .section-heading { height:40px; } .launch { width:100%; max-width:300px; } .tile { width:23px; height:23px; } .tile.star { font-size:23px; } }
+      ]]></style>
+      <div class="stats frame"><span>points today <b class="points">8</b></span><span>points this week 42</span><div class="credit"><span>2 game credits</span></div></div>
+      <header class="topbar"><div class="nav frame">
+        <div class="logo" aria-label="Get More Math">gmm</div>
+        <div class="lesson"><span>Lesson 5.3 <i class="chevron"></i></span><span>5 of 14</span></div>
+        <div class="nav-end" aria-hidden="true"><span class="user">Student</span><svg xmlns="http://www.w3.org/2000/svg" class="hand" viewBox="0 0 28 34"><path d="M7 17V8q0-3 3-2V3q0-3 3-1v13V3q2-3 4 0v12V6q3-2 3 1v10q3-4 5-1l-2 10q-2 6-9 6-8 0-9-8L3 17q0-4 4 0Z" fill="none" stroke="#d4ebce" stroke-width="1.3"/></svg><span class="menu-icon"><i></i><i></i><i></i></span></div>
+      </div></header>
+      <main class="frame">
+        <aside class="sidebar" aria-label="Skills">
+          <div class="section-heading">Targeted Skills <span class="count">| 5 of 6</span></div>
+          <div class="target"><span class="target-date">Nov 22<sup>nd</sup></span><span class="tile yellow"></span><span class="tile current">$</span></div>
+          <div class="section-heading review-heading"><span>Spiral Review <span class="count">| 0 of 8</span></span><span class="sort">Sort by <b>Date Learned</b><i></i></span></div>
+          <div class="review" aria-label="Spiral review skill grid"><div class="month"><span class="month-name">Jul ’24</span><div class="month-tiles"><div class="tile-row"><span class="tile star">★</span><span class="tile star">★</span><span class="tile star">★</span><span class="tile green"></span><span class="tile green"></span><span class="tile star">★</span><span class="tile dark">$</span><span class="tile green"></span><span class="tile star">★</span></div><div class="tile-row"><span class="tile star">★</span><span class="tile dark">$</span></div></div></div>
+<div class="month"><span class="month-name">Aug ’24</span><div class="month-tiles"><div class="tile-row"><span class="tile star">★</span><span class="tile star">★</span><span class="tile star">★</span><span class="tile green"></span><span class="tile dark">$</span><span class="tile star">★</span><span class="tile dark">$</span><span class="tile green"></span><span class="tile star">★</span></div><div class="tile-row"><span class="tile star">★</span><span class="tile star">★</span><span class="tile star">★</span><span class="tile star">★</span></div></div></div>
+<div class="month"><span class="month-name">Sep ’24</span><div class="month-tiles"><div class="tile-row"><span class="tile star">★</span><span class="tile star">★</span><span class="tile dark">$</span><span class="tile green"></span><span class="tile dark">$</span><span class="tile star">★</span><span class="tile star">★</span><span class="tile dark">$</span><span class="tile yellow"></span></div><div class="tile-row"><span class="tile dark">$</span></div></div></div>
+<div class="month"><span class="month-name">Oct ’24</span><div class="month-tiles"><div class="tile-row"><span class="tile star">★</span><span class="tile green"></span><span class="tile star">★</span><span class="tile star">★</span><span class="tile green"></span><span class="tile star">★</span><span class="tile green"></span><span class="tile yellow"></span></div><div class="tile-row"><span class="tile lime">$</span><span class="tile green"></span><span class="tile green"></span></div></div></div>
+<div class="month"><span class="month-name">Nov ’24</span><div class="month-tiles"><div class="tile-row"><span class="tile green"></span><span class="tile lime">$</span><span class="tile green"></span><span class="tile yellow"></span><span class="tile yellow"></span><span class="tile yellow"></span><span class="tile yellow"></span><span class="tile yellow"></span></div><div class="tile-row"><span class="tile yellow"></span><span class="tile yellow"></span><span class="tile empty"></span></div></div></div></div>
+        </aside>
+        <section class="lesson-panel" aria-label="Number line lesson">
+          <div class="section-heading current-heading"><span class="level" aria-hidden="true"><i></i><b></b></span>Current Skill <span class="tile">$</span><button type="button" id="showAnswer" class="show-answer" aria-pressed="false">SHOW ANSWER</button></div>
+          <div class="exercise"><h1 class="question">On which number line does point H best represent a distance of 1.1 units from zero?</h1><div class="answers" role="radiogroup" aria-label="Choose a number line"><label class="answer" id="answer0"><input type="radio" name="number-line" value="0" aria-label="H is 2.1 units from zero"/><span class="checkmark" aria-hidden="true"></span><svg xmlns="http://www.w3.org/2000/svg" class="number-line" viewBox="0 0 410 74" aria-hidden="true">
+    <path d="M20 38 H386" fill="none" stroke="#252a25" stroke-width="1.7" />
+    <path d="M16 38l10-5v10z M391 38l-10-5v10z" fill="#252a25" />
+    <path d="M38 30v16" stroke="#555b55" stroke-width="1.4"/><text x="38" y="61" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#444944">0</text><path d="M120 30v16" stroke="#555b55" stroke-width="1.4"/><text x="120" y="61" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#444944">1</text><path d="M202 30v16" stroke="#555b55" stroke-width="1.4"/><text x="202" y="61" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#444944">2</text><path d="M284 30v16" stroke="#555b55" stroke-width="1.4"/><text x="284" y="61" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#444944">3</text><path d="M366 30v16" stroke="#555b55" stroke-width="1.4"/><text x="366" y="61" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#444944">4</text>
+    <circle cx="210.20000000000002" cy="38" r="5.3" fill="#202420" />
+    <text x="210.20000000000002" y="24" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#202420">H</text>
+  </svg></label>
+<label class="answer" id="answer1"><input type="radio" name="number-line" value="1" aria-label="H is 0.1 units from zero"/><span class="checkmark" aria-hidden="true"></span><svg xmlns="http://www.w3.org/2000/svg" class="number-line" viewBox="0 0 410 74" aria-hidden="true">
+    <path d="M20 38 H386" fill="none" stroke="#252a25" stroke-width="1.7" />
+    <path d="M16 38l10-5v10z M391 38l-10-5v10z" fill="#252a25" />
+    <path d="M38 30v16" stroke="#555b55" stroke-width="1.4"/><text x="38" y="61" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#444944">0</text><path d="M120 30v16" stroke="#555b55" stroke-width="1.4"/><text x="120" y="61" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#444944">1</text><path d="M202 30v16" stroke="#555b55" stroke-width="1.4"/><text x="202" y="61" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#444944">2</text><path d="M284 30v16" stroke="#555b55" stroke-width="1.4"/><text x="284" y="61" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#444944">3</text><path d="M366 30v16" stroke="#555b55" stroke-width="1.4"/><text x="366" y="61" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#444944">4</text>
+    <circle cx="46.2" cy="38" r="5.3" fill="#202420" />
+    <text x="46.2" y="24" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#202420">H</text>
+  </svg></label>
+<label class="answer" id="answer2"><input type="radio" name="number-line" value="2" aria-label="H is 0.6 units from zero"/><span class="checkmark" aria-hidden="true"></span><svg xmlns="http://www.w3.org/2000/svg" class="number-line" viewBox="0 0 410 74" aria-hidden="true">
+    <path d="M20 38 H386" fill="none" stroke="#252a25" stroke-width="1.7" />
+    <path d="M16 38l10-5v10z M391 38l-10-5v10z" fill="#252a25" />
+    <path d="M38 30v16" stroke="#555b55" stroke-width="1.4"/><text x="38" y="61" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#444944">0</text><path d="M120 30v16" stroke="#555b55" stroke-width="1.4"/><text x="120" y="61" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#444944">1</text><path d="M202 30v16" stroke="#555b55" stroke-width="1.4"/><text x="202" y="61" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#444944">2</text><path d="M284 30v16" stroke="#555b55" stroke-width="1.4"/><text x="284" y="61" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#444944">3</text><path d="M366 30v16" stroke="#555b55" stroke-width="1.4"/><text x="366" y="61" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#444944">4</text>
+    <circle cx="87.19999999999999" cy="38" r="5.3" fill="#202420" />
+    <text x="87.19999999999999" y="24" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#202420">H</text>
+  </svg></label>
+<label class="answer" id="answer3"><input type="radio" name="number-line" value="3" aria-label="H is 1.1 units from zero"/><span class="checkmark" aria-hidden="true"></span><svg xmlns="http://www.w3.org/2000/svg" class="number-line" viewBox="0 0 410 74" aria-hidden="true">
+    <path d="M20 38 H386" fill="none" stroke="#252a25" stroke-width="1.7" />
+    <path d="M16 38l10-5v10z M391 38l-10-5v10z" fill="#252a25" />
+    <path d="M38 30v16" stroke="#555b55" stroke-width="1.4"/><text x="38" y="61" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#444944">0</text><path d="M120 30v16" stroke="#555b55" stroke-width="1.4"/><text x="120" y="61" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#444944">1</text><path d="M202 30v16" stroke="#555b55" stroke-width="1.4"/><text x="202" y="61" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#444944">2</text><path d="M284 30v16" stroke="#555b55" stroke-width="1.4"/><text x="284" y="61" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#444944">3</text><path d="M366 30v16" stroke="#555b55" stroke-width="1.4"/><text x="366" y="61" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#444944">4</text>
+    <circle cx="128.2" cy="38" r="5.3" fill="#202420" />
+    <text x="128.2" y="24" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#202420">H</text>
+  </svg></label></div></div>
+        </section>
+        <div class="launch-area"><button type="button" id="startBtnGroup" class="launch" aria-disabled="false"><span id="startBtnText">Get More Math</span></button><div id="progressPanel" hidden="hidden"><p id="statusText" role="status" aria-live="polite"></p><div id="progressTrack" role="progressbar" aria-label="christianlumen" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="bar"></div></div></div></div>
+      </main>
+    </div>
+  </foreignObject>
+  <script><![CDATA[
+  (() => {
+    const button = document.getElementById('showAnswer');
+    button.addEventListener('click', () => {
+      const reveal = button.getAttribute('aria-pressed') !== 'true';
+      button.setAttribute('aria-pressed', String(reveal));
+      button.textContent = reveal ? 'HIDE ANSWER' : 'SHOW ANSWER';
+      document.getElementById('answer3').classList.toggle('correct', reveal);
+    });
+  })();
+  (function () {
+  "use strict";
+
+  const USER = "dowsy456";
+  const PREFIX = "christianlumen";
+  const BRANCH = "main";
+  const FILE = "index.html";
+  const CACHE_KEY = "gmm:lastCdnIndex:v6";
+  const HTML_CACHE_KEY = "gmm:readyHtml:v6";
+  const CACHE_KEYS = [CACHE_KEY, "gmm:lastCdnIndex:v5", "gmm:lastCdnIndex:v4", "gmm:lastCdnIndex:v3", "gmm:lastCdnIndex:v2", "gmm:lastCdnIndex"];
+  // A verified hint, never a replacement for live repository discovery.
+  const SEED_INDEX = 774;
+  const DISCOVERY_TIMEOUT = 4000;
+  const DOWNLOAD_TIMEOUT = 4500;
+  const MAX_HTML_BYTES = 32 * 1024 * 1024;
+  const mirrors = ["cdn.jsdelivr.net", "fastly.jsdelivr.net", "gcore.jsdelivr.net"];
+
+  const button = document.getElementById("startBtnGroup");
+  const buttonText = document.getElementById("startBtnText");
+  const status = document.getElementById("statusText");
+  const bar = document.getElementById("bar");
+  const panel = document.getElementById("progressPanel");
+  const track = document.getElementById("progressTrack");
+  let state = { index: -1, current: 0, total: 0, complete: false };
+  let child = null;
+  let busy = false;
+  let prepared = null;
+  let workStarted = false;
+  let discovering = false;
+  let activeJobs = 0;
+  let waiters = [];
+  const candidateJobs = new Map();
+  let failureMessage = null;
+  let partialCandidates = [];
+  const activeControllers = new Set();
+
+  function renderProgress(targetDocument) {
+    if (targetDocument === document && failureMessage) return;
+    const label = targetDocument.getElementById("statusText");
+    const progressBar = targetDocument.getElementById("bar");
+    const progressTrack = targetDocument.getElementById("progressTrack");
+    const name = PREFIX + (state.index >= 0 ? state.index : "");
+    const numbers = state.current.toLocaleString() + (state.total ? " / " + state.total.toLocaleString() : "");
+    if (label) label.textContent = name + " · " + numbers;
+    if (progressBar) progressBar.style.width = state.complete ? "100%" : state.total ? Math.min(100, state.current / state.total * 100) + "%" : "36%";
+    if (progressTrack) {
+      progressTrack.classList.toggle("is-indeterminate", !state.total && !state.complete);
+      progressTrack.setAttribute("aria-valuetext", name + ", " + numbers);
+      if (state.complete || state.total) progressTrack.setAttribute("aria-valuenow", state.complete ? "100" : String(Math.round(state.current / state.total * 100)));
+      else progressTrack.removeAttribute("aria-valuenow");
+    }
+  }
+
+  function updateProgress(next) {
+    state = Object.assign({}, state, next);
+    renderProgress(document);
+    try {
+      if (child && !child.closed && child.document.getElementById("launcherLoading")) renderProgress(child.document);
+    } catch (_) { /* The destination may have navigated after launch. */ }
+  }
+
+  function setBusy(value) {
+    busy = value;
+    button.disabled = value;
+    button.setAttribute("aria-disabled", String(value));
+    if (buttonText) buttonText.textContent = "Get More Math";
+  }
+
+  function cachedIndex() {
+    let highest = -1;
+    try {
+      for (const key of CACHE_KEYS) {
+        const value = localStorage.getItem(key);
+        if (value === null || value === "") continue;
+        const number = Number(value);
+        if (Number.isSafeInteger(number) && number >= 0) highest = Math.max(highest, number);
+      }
+    } catch (_) { /* Local-file storage is optional. */ }
+    return highest;
+  }
+
+  function cachedHTML() {
+    try {
+      const item = JSON.parse(localStorage.getItem(HTML_CACHE_KEY) || "null");
+      if (!item || !Number.isSafeInteger(item.index) || item.index < 0 || typeof item.html !== "string" || item.html.length > 4 * 1024 * 1024) return null;
+      if (!/<(?:!doctype\s+html|html|head|body)(?:\s|>)/i.test(item.html)) return null;
+      if (!sources(item.index).includes(item.base)) return null;
+      return { index: item.index, html: item.html, base: item.base, bytes: new TextEncoder().encode(item.html).byteLength };
+    } catch (_) { return null; }
+  }
+
+  function remember(loaded) {
+    try {
+      localStorage.setItem(CACHE_KEY, String(loaded.index));
+      // Store a working page, not just its index. A later click need not wait
+      // for a rate-limited catalogue or an expired in-memory preparation.
+      if (loaded.html.length <= 4 * 1024 * 1024) localStorage.setItem(HTML_CACHE_KEY, JSON.stringify(loaded));
+    } catch (_) { /* Storage is optional for file URLs and private windows. */ }
+  }
+
+  function sources(index) {
+    const path = "/gh/" + USER + "/" + PREFIX + index + "@" + BRANCH + "/" + FILE;
+    return mirrors.map(function (host) { return "https://" + host + path; }).concat([
+      "https://raw.githubusercontent.com/" + USER + "/" + PREFIX + index + "/" + BRANCH + "/" + FILE
+    ]);
+  }
+
+  // The timeout covers headers AND the entire response body.
+  async function request(url, options, timeout, consume, parentSignal) {
+    const controller = new AbortController();
+    activeControllers.add(controller);
+    const abort = function () { controller.abort(); };
+    if (parentSignal) {
+      if (parentSignal.aborted) controller.abort();
+      else parentSignal.addEventListener("abort", abort, { once: true });
+    }
+    const timer = setTimeout(abort, timeout);
+    try {
+      const response = await fetch(url, Object.assign({ cache: "default", credentials: "omit", referrerPolicy: "no-referrer" }, options, { signal: controller.signal }));
+      if (!response.ok) {
+        const error = new Error("Unavailable");
+        error.status = response.status;
+        throw error;
+      }
+      return await consume(response);
+    } finally {
+      clearTimeout(timer);
+      if (parentSignal) parentSignal.removeEventListener("abort", abort);
+      activeControllers.delete(controller);
+    }
+  }
+
+  function indices(repositories) {
+    return repositories.map(function (repo) {
+      const match = repo && typeof repo.name === "string" && repo.name.match(/^christianlumen(\d+)$/);
+      return match ? Number(match[1]) : -1;
+    }).filter(function (index) { return Number.isSafeInteger(index) && index >= 0; });
+  }
+
+  function descending(values) {
+    return Array.from(new Set(values)).sort(function (a, b) { return b - a; });
+  }
+
+  async function repositoryPage(page) {
+    return request("https://api.github.com/users/" + USER + "/repos?per_page=100&page=" + page,
+      {}, DISCOVERY_TIMEOUT, async function (response) {
+        const repositories = await response.json();
+        if (!Array.isArray(repositories)) throw new Error("Unavailable");
+        const link = response.headers.get("Link") || "";
+        const last = link.match(/[?&]page=(\d+)[^>]*>;\s*rel="last"/);
+        const found = indices(repositories);
+        partialCandidates.push.apply(partialCandidates, found);
+        return { found: found, count: repositories.length, last: last ? Number(last[1]) : 0, next: /rel="next"/.test(link) };
+      });
+  }
+
+  async function discover() {
+    partialCandidates = [];
+    const first = await repositoryPage(1);
+    let found = first.found;
+    let completed = 1;
+    const last = first.last;
+    if (last > 1) {
+      // Six small metadata requests at a time; no thousands-of-URLs flood.
+      let nextPage = 2;
+      const workers = Array.from({ length: Math.min(6, last - 1) }, async function () {
+        while (nextPage <= last) {
+          const result = await repositoryPage(nextPage++);
+          found.push.apply(found, result.found);
+          completed++;
+        }
+      });
+      const results = await Promise.allSettled(workers);
+      if (results.some(function (result) { return result.status === "rejected"; })) throw new Error("Unavailable");
+    } else if (first.next || first.count === 100) {
+      // Link may be unavailable through a proxy; continue until a short page.
+      let page = 2;
+      while (true) {
+        const result = await repositoryPage(page++);
+        found.push.apply(found, result.found);
+        completed++;
+        if (result.count < 100) break;
+      }
+    }
+    found = descending(found);
+    if (!found.length) throw new Error("Unavailable");
+    return found;
+  }
+
+  async function readHTML(response, report) {
+    let html;
+    let received = 0;
+    if (response.body && response.body.getReader) {
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
+      const chunks = [];
+      try {
+        while (true) {
+          const chunk = await reader.read();
+          if (chunk.done) break;
+          received += chunk.value.byteLength;
+          if (received > MAX_HTML_BYTES) throw new Error("Unavailable");
+          chunks.push(decoder.decode(chunk.value, { stream: true }));
+          report(received);
+        }
+        chunks.push(decoder.decode());
+        html = chunks.join("");
+      } finally { reader.releaseLock(); }
+    } else {
+      html = await response.text();
+      received = new TextEncoder().encode(html).byteLength;
+      if (received > MAX_HTML_BYTES) throw new Error("Unavailable");
+      report(received);
+    }
+    // Reject empty responses and CDN error messages before choosing a winner.
+    if (!/<(?:!doctype\s+html|html|head|body)(?:\s|>)/i.test(html)) throw new Error("Unavailable");
+    return { html: html, bytes: received };
+  }
+
+  async function loadIndex(index, signal, display) {
+    const raceController = new AbortController();
+    const abort = function () { raceController.abort(); };
+    if (signal) {
+      if (signal.aborted) raceController.abort();
+      else signal.addEventListener("abort", abort, { once: true });
+    }
+    let largestBody = 0;
+    const report = function (bytes) {
+      largestBody = Math.max(largestBody, bytes);
+      if (display()) updateProgress({ index: index, current: largestBody, total: 0, complete: false });
+    };
+    try {
+      const downloads = sources(index).map(function (url) {
+        return request(url, {}, DOWNLOAD_TIMEOUT, async function (response) {
+          const body = await readHTML(response, report);
+          return { index: index, html: body.html, bytes: body.bytes, base: url };
+        }, raceController.signal);
+      });
+      const result = await Promise.any(downloads);
+      const hasRelativeAssets = /<(?:script|link|img|source|video|audio|iframe)\b[^>]*\b(?:src|href)\s*=\s*["'](?![a-z][a-z\d+.-]*:|\/\/|#)/i.test(result.html);
+      const hasAbsoluteBase = /<base\b[^>]*href\s*=\s*["'](?:https?:\/\/|\/\/)/i.test(result.html);
+      if (new URL(result.base).hostname === "raw.githubusercontent.com" && hasRelativeAssets && !hasAbsoluteBase) {
+        // Raw is useful for HTML but its nosniff text/plain assets cannot run.
+        // The already-running CDN race supplies a verified working asset host.
+        const assetSource = await Promise.any(downloads.slice(0, mirrors.length));
+        result.base = assetSource.base;
+      }
+      return result;
+    } finally {
+      // Cancel unused transports only after a complete valid HTML body wins.
+      raceController.abort();
+      if (signal) signal.removeEventListener("abort", abort);
+    }
+  }
+
+  function notifyWaiters() {
+    if (prepared) {
+      const listeners = waiters;
+      waiters = [];
+      listeners.forEach(function (listener) { listener.resolve(prepared); });
+    } else if (!discovering && activeJobs === 0) {
+      const listeners = waiters;
+      waiters = [];
+      listeners.forEach(function (listener) { listener.reject(new Error("Unavailable")); });
+    }
+  }
+
+  function accept(loaded, persist) {
+    // Keep the newest fully downloaded result available. An unfinished newer
+    // request never blocks use of the last working page.
+    if (!prepared || loaded.index >= prepared.index) {
+      prepared = loaded;
+      if (persist) remember(loaded);
+      updateProgress({ index: loaded.index, current: loaded.bytes, total: loaded.bytes, complete: true });
+    }
+    notifyWaiters();
+  }
+
+  function startCandidate(index) {
+    if (!Number.isSafeInteger(index) || index < 0 || candidateJobs.has(index)) return;
+    activeJobs++;
+    const job = loadIndex(index, null, function () { return !prepared && (state.index < 0 || index >= state.index); })
+      .then(function (loaded) { accept(loaded, true); })
+      .catch(function () { /* Other mirrors, the cached page, or discovery may succeed. */ })
+      .finally(function () { activeJobs--; notifyWaiters(); });
+    candidateJobs.set(index, job);
+  }
+
+  function beginPreparation() {
+    if (!workStarted) {
+      workStarted = true;
+      discovering = true;
+      const cached = cachedHTML();
+      if (cached) accept(cached, false);
+      // Begin real GETs immediately. Never wait for catalogue metadata, issue
+      // HEAD probes, or enumerate nonexistent numbered repositories.
+      const hint = cachedIndex();
+      if (hint >= 0) startCandidate(hint);
+      startCandidate(SEED_INDEX);
+      discover().then(function (found) {
+        // Refresh in the background; promote a newer page once fully ready.
+        found.slice(0, 3).forEach(startCandidate);
+      }).catch(function () {
+        // A rate limit does not trigger any bulk scan or delay a working page.
+      }).finally(function () { discovering = false; notifyWaiters(); });
+    }
+    if (prepared) return Promise.resolve(prepared);
+    if (!discovering && activeJobs === 0) return Promise.reject(new Error("Unavailable"));
+    return new Promise(function (resolve, reject) { waiters.push({ resolve: resolve, reject: reject }); });
+  }
+
+  function writeDocument(tab, html, onReady, onLeave) {
+    // document.open() uses its caller's document URL. Run the writer in the
+    // destination realm so about:blank does not become the SVG's file URL.
+    // HTML is passed as data, never interpolated into this fixed function body.
+    const write = tab.Function("html", "ready", "leave", "resolve", "reject", "try { document.open(); if (ready) document.addEventListener('DOMContentLoaded', ready, { once: true }); if (leave) window.addEventListener('pagehide', leave, { once: true }); document.write(html); document.close(); resolve(); } catch (error) { reject(error); }");
+    return new Promise(function (resolve, reject) {
+      // A destination-owned event-loop task is essential: calling the writer
+      // on the source stack would still make the source the entry document.
+      // Microtask handoff preserves about:blank without a timed delay.
+      const run = tab.Function("write", "html", "ready", "leave", "resolve", "reject", "queueMicrotask(function () { write(html, ready, leave, resolve, reject); });");
+      run(write, html, onReady || null, onLeave || null, resolve, reject);
+    });
+  }
+
+  async function loadingPage(tab) {
+    await writeDocument(tab, '<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Get More Math</title><style>html,body{height:100%;margin:0}body{background:#f8f8f8;color:#555;font:16px Arial,sans-serif;display:grid;place-items:center}.box{width:min(360px,80vw);text-align:center}.brand{font:bold 66px Georgia,serif;letter-spacing:-6px;color:#479b45;margin-bottom:32px}#statusText{font-variant-numeric:tabular-nums;margin-bottom:16px}#progressTrack{height:6px;background:#e4e4e4;overflow:hidden;border-radius:3px}#bar{height:100%;background:#479b45;width:0}.is-indeterminate #bar{animation:load 1.1s ease-in-out infinite alternate}@keyframes load{to{transform:translateX(177%)}}@media(prefers-reduced-motion:reduce){.is-indeterminate #bar{animation:none}}</style></head><body><main class="box" id="launcherLoading"><div class="brand">gmm</div><div id="statusText" role="status" aria-live="polite">christianlumen · 0</div><div id="progressTrack" role="progressbar" aria-label="christianlumen" aria-valuemin="0" aria-valuemax="100"><div id="bar"></div></div></main></body></html>');
+    renderProgress(tab.document);
+  }
+
+  function withBase(loaded) {
+    // Raw hosts serve scripts/styles as text/plain with nosniff. Resolve those
+    // assets through the CDN when the raw HTML transport wins the race.
+    const assetURL = new URL(loaded.base).hostname === "raw.githubusercontent.com" ? sources(loaded.index)[0] : loaded.base;
+    const base = new URL(".", assetURL).href.replace(/&/g, "&amp;").replace(/"/g, "&quot;");
+    let html = loaded.html.replace(/http:\/\/cdn\.jsdelivr\.(?:net|com)\//gi, "https://cdn.jsdelivr.net/");
+    // Respect an existing base; otherwise preserve the source's relative assets.
+    if (/<base\b[^>]*href\s*=/i.test(html)) return html;
+    const tag = '<base href="' + base + '">';
+    if (/<head\b[^>]*>/i.test(html)) return html.replace(/<head\b[^>]*>/i, function (head) { return head + tag; });
+    if (/<html\b[^>]*>/i.test(html)) return html.replace(/<html\b[^>]*>/i, function (root) { return root + "<head>" + tag + "</head>"; });
+    return "<head>" + tag + "</head>" + html;
+  }
+
+  async function launch(loaded, tab) {
+    if (tab.closed) throw new Error("closed");
+    const html = withBase(loaded);
+    // Loaded applications do not need access to the launcher window.
+    try { tab.opener = null; } catch (_) {}
+    let handedOff = false;
+    await writeDocument(tab, html, function () {
+      handedOff = true;
+      updateProgress({ index: loaded.index, current: loaded.bytes, total: loaded.bytes, complete: true });
+      setBusy(false);
+      // No delay or history tricks. The browser decides whether this tab is closable.
+      try { tab.focus(); } catch (_) {}
+      try { window.close(); } catch (_) {}
+    }, function () {
+      // Closing a destination with still-loading deferred scripts must not
+      // leave the source button disabled forever.
+      queueMicrotask(function () {
+        if (!handedOff && tab.closed) fail("Tab closed. Try again.");
+      });
+    });
+  }
+
+  function fail(message) {
+    failureMessage = message;
+    if (panel) panel.hidden = false;
+    status.textContent = message;
+    if (bar) bar.style.width = "0%";
+    if (track) { track.classList.remove("is-indeterminate"); track.removeAttribute("aria-valuenow"); }
+    try {
+      if (child && !child.closed && child.document.getElementById("launcherLoading")) {
+        child.document.getElementById("statusText").textContent = message;
+        child.document.getElementById("progressTrack").hidden = true;
+      }
+    } catch (_) {}
+    setBusy(false);
+  }
+
+  async function handleClick() {
+    if (busy) return;
+    failureMessage = null;
+    setBusy(true);
+    if (panel) panel.hidden = false;
+    // Keep this synchronous with the user's click so popup permission is retained.
+    child = window.open("about:blank", "_blank");
+    if (!child) { fail("Allow pop-ups, then try again."); return; }
+    const destination = child;
+    try {
+      await loadingPage(destination);
+      if (!prepared && !discovering && activeJobs === 0) { workStarted = false; candidateJobs.clear(); }
+      const loaded = prepared || await beginPreparation();
+      await launch(loaded, destination);
+    } catch (error) {
+      fail(error && error.message === "closed" ? "Tab closed. Try again." : "Unable to load. Check your connection and try again.");
+    }
+  }
+
+  button.addEventListener("click", handleClick);
+  // Native XHTML buttons already support Enter and Space without double activation.
+  if (button.localName !== "button") {
+    button.setAttribute("role", "button");
+    button.setAttribute("tabindex", "0");
+    button.addEventListener("keydown", function (event) {
+      if (event.key === "Enter" || event.key === " ") { event.preventDefault(); handleClick(); }
+    });
+  }
+  window.addEventListener("pagehide", function () {
+    activeControllers.forEach(function (controller) { controller.abort(); });
+  });
+  beginPreparation().catch(function () { /* A click can retry if the background fetch failed. */ });
+})();
+
+  ]]></script>
+</svg>
